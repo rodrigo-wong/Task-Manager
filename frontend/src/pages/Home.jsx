@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <Container className="mt-5 w-50">
-      <p className="text-center fs-3"><strong>Todo-List</strong></p>
+      <p className="text-center fs-3"><strong>Task-Manager</strong></p>
         <Tabs
           defaultActiveKey="signup"
           id="justify-tab-example"
