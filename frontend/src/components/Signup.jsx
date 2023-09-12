@@ -1,8 +1,11 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button,Container } from "react-bootstrap";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -22,8 +25,9 @@ const Signup = () => {
           const data = JSON.stringify(res.data);
           localStorage.setItem("userInfo", data);
         });
-        navigate('/tasks')
+      navigate("/tasks");
     } catch (err) {
+      toast.error("Invalid information provided");
       console.log(err.message);
     }
   };
@@ -59,10 +63,12 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
-
-      <Button variant="primary" onClick={handleSubmit}>
-        Submit
-      </Button>
+      <Container className="text-center">
+        <Button variant="primary" onClick={handleSubmit}>
+          Submit
+        </Button>
+      </Container>
+      <ToastContainer position="bottom-center" />
     </Form>
   );
 };
