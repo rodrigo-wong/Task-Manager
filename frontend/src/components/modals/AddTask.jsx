@@ -28,6 +28,7 @@ const AddTask = ({setReload}) => {
               }
             );
             setReload(true);
+            setName(""); setDescription(""); setPriority("");
             handleClose();
         } catch (err) {
           console.log(err.message);
