@@ -1,5 +1,5 @@
 # Task-Manager
-A full-stack CRUD task management website to  create and keep track of tasks according to priority level.
+A full-stack CRUD task management website with authentication system to create and keep track of tasks according to priority level.
 Tech stack: Laravel, MySQL, React
 
 
