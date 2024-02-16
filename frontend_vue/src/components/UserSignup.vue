@@ -57,7 +57,7 @@ export default defineComponent({
 
     const handleSubmit = async () => {
       try {
-        const res = await axios.post(`http://localhost:8000/api/register`, {
+        const res = await axios.post(`${process.env.VUE_APP_API_URL}/api/register`, {
           name: name.value,
           email: email.value,
           password: password.value,
@@ -80,7 +80,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped>
-/* Add your styles here */
-</style>

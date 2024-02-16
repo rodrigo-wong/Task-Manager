@@ -46,7 +46,7 @@ export default defineComponent({
 
     const handleSubmit = async () => {
       try {
-        const res = await axios.post(`http://localhost:8000/api/login`, {
+        const res = await axios.post(`${process.env.VUE_APP_API_URL}/api/login`, {
           email: email.value,
           password: password.value,
         });

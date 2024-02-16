@@ -25,7 +25,7 @@ export default defineComponent({
 
     const handleDelete = async (task: any) => {
       try {
-        await axios.delete(`http://localhost:8000/api/task/${task.id}`, {
+        await axios.delete(`${process.env.VUE_APP_API_URL}/api/task/${task.id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -39,7 +39,7 @@ export default defineComponent({
 
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/task`, {
+        const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/task`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

@@ -111,7 +111,7 @@ export default defineComponent({
       try {
         const token = JSON.parse(localStorage.getItem("userInfo") || "").token;
         await axios.post(
-          `http://localhost:8000/api/task`,
+          `${process.env.VUE_APP_API_URL}/api/task`,
           {
             name: name.value,
             description: description.value,

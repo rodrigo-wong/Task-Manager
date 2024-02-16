@@ -62,7 +62,7 @@ export default defineComponent({
     const logout = async () => {
       try {
         await axios.post(
-          `http://localhost:8000/api/logout`,
+          `${process.env.VUE_APP_API_URL}/api/logout`,
           {},
           {
             headers: {

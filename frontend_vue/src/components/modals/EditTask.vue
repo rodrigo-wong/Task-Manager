@@ -111,7 +111,7 @@ export default defineComponent({
       try {
         const token = JSON.parse(localStorage.getItem("userInfo") || "").token;
         await axios.patch(
-          `http://localhost:8000/api/task/${props.task?.id}`,
+          `${process.env.VUE_APP_API_URL}/api/task/${props.task?.id}`,
           {
             name: name.value,
             description: description.value,
